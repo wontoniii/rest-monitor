@@ -1,6 +1,6 @@
-import service
+import nm.nm_service.service
 import json
-from nm_functions.periodicEvent import PeriodicThread
+from nm.nm_functions.periodic_event import PeriodicThread
 
 __author__ = "wontoniii"
 

@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 from socket import socket
 from threading import Lock
 

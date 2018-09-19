@@ -12,7 +12,7 @@ import igraph
 import sys
 import io
 import ast
-from service import Service
+from nm.nm_service.service import Service
 
 class NGService(Service):
     """

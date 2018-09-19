@@ -1,7 +1,7 @@
-import service
-from nm_functions.periodicEvent import PeriodicThread
-from nm_functions.webclient import HttpClient
-from nm_node import NMNode
+import nm.nm_service.service as service
+from nm.nm_functions.periodic_event import PeriodicThread
+from nm.nm_functions.webclient import HttpClient
+from nm.nm_node import NMNode
 
 __author__ = "wontoniii"
 

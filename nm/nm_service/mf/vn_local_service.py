@@ -1,5 +1,5 @@
-import service
-from nm_packages.vn_info.vn_info import VNInfo
+import nm.nm_service.service as service
+from nm.nm_packages.mf.vn_info.vn_info import VNInfo
 
 __author__ = "wontoniii"
 

@@ -173,3 +173,4 @@ if __name__ == "__main__":
     args = get_args()
     nm = NetworkMonitor()
     nm.run(args.conf)
+    

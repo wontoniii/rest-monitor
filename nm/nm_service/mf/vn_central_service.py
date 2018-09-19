@@ -1,6 +1,6 @@
-import service
-from nm_functions.timeoutEvent import TimeoutEvent
-from nm_node import NMNode
+import nm.nm_service.service as service
+from nm.nm_functions.timeout_event import TimeoutEvent
+from nm.nm_node import NMNode
 
 __author__ = "wontoniii"
 

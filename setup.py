@@ -8,5 +8,6 @@ setup(name='rest-monitor',
       author_email='wontoniii@gmail.com',
       license='GNU',
       packages=['nm'],
+      install_requires=['igraph'],
       zip_safe=False)
 
