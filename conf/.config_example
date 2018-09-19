@@ -1,0 +1,87 @@
+# This is an ini-type configuration file, using sections identified by
+# square brackets. Values are specified on a single line using the '='
+# sign. Some values indicate times, in which case a suffix of 'd' for
+# days, 'h' for hours, 'm' for minutes, and 's' for seconds can be used.
+# Some values can span multiple lines by starting the subsequent lines
+# with one or more spaces.
+#
+#########################  DEFAULT  ###################################
+# This is the default section containing the configuration options for the
+# main application.
+[MAIN]
+
+#List of services to run
+SERVICES = DummyService
+#    NeighborTableService
+
+#Whether to use a click control channel or not (should be set to yes if there is at least one service
+# using the channel
+CLICK = false
+
+#Address to communicate with click
+CLICK_ADDRESS = localhost
+
+#Port to communicate with click
+CLICK_PORT = 5000
+
+#Whether to use a webserver or not (should be set to yes if there is at least one service
+# using the channel
+SERVER = true
+
+#Address to communicate with click
+SERVER_ADDRESS = localhost
+
+#Port to communicate with click
+SERVER_PORT = 12021
+
+#Guid of associated router. Leave to 0 if no router is associated
+GUID = 1
+
+#########################  TOPOLOGY_SERVICE  ###################################
+[TOPOLOGY_SERVICE]
+
+TIMEOUT = 1m
+
+#########################  ASSOC_SERVICE  ###################################
+[ASSOC_SERVICE]
+
+PERIOD = 30s
+
+CENTRAL_SERVICE_IP = localhost
+
+CENTRAL_SERVICE_PORT = 12021
+
+
+#########################  NETGRAPH  ###################################
+# This is the default section containing the configuration options for the
+# main application.
+[NETGRAPH]
+
+period = 5s
+
+childs = 1.2.3.4
+        5.6.7.8
+
+
+#########################  GNRS  ###################################
+# This is the default section containing the configuration options for the
+# main application.
+[GNRS]
+
+period = 5s
+
+api_address = 1.2.3.4
+
+from_file = true
+
+file = /path
+
+guids = 1
+        2
+        3
+
+
+#########################  NEIGHBOR_SERVICE_TABLE  ###################################
+[NEIGHBOR_SERVICE_TABLE]
+
+PERIOD = 5s
