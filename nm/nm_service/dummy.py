@@ -25,7 +25,7 @@ class DummyService (service.Service):
         :param parameters:
         :return:
         """
-        print "I'm dummy, not doing anythong with request:"
+        print "I'm dummy, not doing anything with request:"
         print "\tPath components: " + str(path_components)
         print "\tQuery components " + str(query_components)
         return [True, None, "Dummy Service"]

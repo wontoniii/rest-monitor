@@ -1,8 +1,5 @@
 __author__ = 'wontoniii'
 
-from nm_system import NMSystem
-
-
 class Service(object):
     """
         General class for all services.
