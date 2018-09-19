@@ -2,9 +2,8 @@ from argparse import ArgumentParser
 from nm_functions.config import ExtendedConfigParser
 from nm_functions.webserver import ServiceHTTPServer,ServiceHTTPHandler
 from nm_system import NMSystem
-from nm_service.dummy import DummyService
 import importlib
-from nm_service.ServiceException import ServiceNotFound
+from nm_service.service_exception import ServiceNotFound
 from nm_functions.control_socket import ConcurrentControlSocket
 from nm_node import NMNode
 import signal
@@ -17,11 +16,11 @@ nm = None
 
 # Initialize the default config parameters
 servicesAvailable = {"DummyService": getattr(importlib.import_module("nm_service.dummy"), "DummyService"),
-                     "NeighborTableService": getattr(importlib.import_module("nm_service.neighborTableService"), "NeighborTableService"),
-                     "TopologyService": getattr(importlib.import_module("nm_service.topologyService"), "TopologyService"),
-                     "AssocService": getattr(importlib.import_module("nm_service.assocService"), "AssocService"),
-                     "VNCentralService": getattr(importlib.import_module("nm_service.vnCentralService"), "VNCentralService"),
-                     "VNLocalService": getattr(importlib.import_module("nm_service.vnLocalService"), "VNLocalService")}
+                     "NeighborTableService": getattr(importlib.import_module("nm_service.mf.neighbor_table_service"), "NeighborTableService"),
+                     "TopologyService": getattr(importlib.import_module("nm_service.mf.topology_service"), "TopologyService"),
+                     "AssocService": getattr(importlib.import_module("nm_service.mf.assoc_service"), "AssocService"),
+                     "VNCentralService": getattr(importlib.import_module("nm_service.mf.vn_central_service"), "VNCentralService"),
+                     "VNLocalService": getattr(importlib.import_module("nm_service.mf.vn_local_service"), "VNLocalService")}
 
 
 def signal_handler(signal, frame):
