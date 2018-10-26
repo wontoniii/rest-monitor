@@ -26,6 +26,12 @@ class ServiceHTTPHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
       path_components = parsed_query.path.split("/")
       path_components = filter(None, path_components)
       query_components = parse_qs(parsed_query.query)
+
+      print parsed_query
+      print path_components
+      print query_components
+
+
       [valid, headers, body] = self.server.callback.handleGetRequest(path_components, query_components)
       if valid is True:
         #send everything back

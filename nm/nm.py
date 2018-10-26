@@ -15,7 +15,8 @@ __author__ = 'wontoniii'
 nm = None
 
 # Initialize the default config parameters
-servicesAvailable = {"DummyService": getattr(importlib.import_module("nm_service.dummy"), "DummyService"),}
+servicesAvailable = {"DummyService": getattr(importlib.import_module("nm_service.dummy"), "DummyService"),
+                     "PingerService": getattr(importlib.import_module("nm_service.pinger"), "PingerService")}
 
 
 def signal_handler(signal, frame):
