@@ -1,0 +1,49 @@
+# This is an ini-type configuration file, using sections identified by
+# square brackets. Values are specified on a single line using the '='
+# sign. Some values indicate times, in which case a suffix of 'd' for
+# days, 'h' for hours, 'm' for minutes, and 's' for seconds can be used.
+# Some values can span multiple lines by starting the subsequent lines
+# with one or more spaces.
+#
+#########################  DEFAULT  ###################################
+# This is the default section containing the configuration options for the
+# main application.
+[MAIN]
+
+#List of services to run
+SERVICES = DummyService
+
+#Whether to use a webserver or not (should be set to yes if there is at least one service
+# using the channel
+SERVER = true
+
+#Address to communicate with click
+SERVER_ADDRESS = localhost
+
+#Port to communicate with click
+SERVER_PORT = 12021
+
+#UID of instance. If 0, creates it randomly. If provided in command line, this value gets over-written
+UID = 0
+
+
+#########################  SAMPLE_SERVICE  ###################################
+[SAMPLE_SERVICE]
+
+# Examples for timed entries
+TIMEOUT = 1m
+
+PERIOD = 30s
+
+# Example for multi line entries
+addresses = 1.2.3.4
+            5.6.7.8
+
+# Example from boolean
+from_file = true
+
+# Example for string
+NAME = localhost
+
+# Example for int
+PORT = 12021

@@ -6,16 +6,15 @@ from nm_functions.config import ExtendedConfigParser
 
 
 class NMSystem:
-    """
-        A container for the main NM System elements
-    """
+  """
+      A container for the main NM System elements
+  """
 
-    def __init__(self, webserver, socket, config, node, services):
-        """
-            Initialize
-        """
-        self.server = webserver
-        self.socket = socket
-        self.config = config
-        self.myNode = node
-        self.services = services
+  def __init__(self, webserver, config, node, services):
+    """
+        Initialize
+    """
+    self.server = webserver
+    self.config = config
+    self.my_node = node
+    self.services = services
