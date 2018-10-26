@@ -7,7 +7,6 @@ from nm_functions.config import ExtendedConfigParser
 from nm_functions.webserver import ServiceHTTPServer,ServiceHTTPHandler
 from nm_system import NMSystem
 from nm_service.service_exception import ServiceNotFound
-from nm_functions.control_socket import ConcurrentControlSocket
 from nm_node import NMNode
 
 __author__ = 'wontoniii'
@@ -56,8 +55,8 @@ class NetworkMonitor:
     node.guid = self.config["UID"]
     node.ip = self.config["SERVER_ADDRESS"]
     node.port = str(self.config["SERVER_PORT"])
-    self.initiateServices()
     self.system = NMSystem(server, config_parser, node, self.services)
+    self.initiateServices()
     server.serve_forever()
 
 
@@ -103,8 +102,11 @@ class NetworkMonitor:
     """
     for service in self.config["SERVICES"]:
       print "Initiate service " + service
-      self.services[service] = servicesAvailable[service](self.system)
-      self.services[service].loadConfig(self.system.config)
+      if service in servicesAvailable:
+        self.services[service] = servicesAvailable[service](self.system)
+        self.services[service].loadConfig(self.system.config)
+      else:
+        print "Service", service, "not available"
 
 
   def startServices(self):

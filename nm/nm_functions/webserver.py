@@ -8,7 +8,6 @@ import BaseHTTPServer
 from urlparse import urlparse, parse_qs
 
 from SocketServer import ThreadingMixIn
-from nm.nm_service.ServiceException import ServiceNotFound
 
 
 class ServiceHTTPHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -41,11 +40,6 @@ class ServiceHTTPHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
         self.wfile.write("Service not running")
-    except ServiceNotFound as e:
-      #Send back error
-      self.send_response(200)
-      self.end_headers()
-      self.wfile.write("Service not running")
     except Exception as general:
       print "Some other error: " + general.message
       self.send_response(200)
@@ -78,11 +72,6 @@ class ServiceHTTPHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
         self.wfile.write("Service not running")
-    except ServiceNotFound as e:
-      # Send back error
-      self.send_response(200)
-      self.end_headers()
-      self.wfile.write("Service not running")
     except Exception as general:
       print "Some other error: " + general.message
       self.send_response(200)
